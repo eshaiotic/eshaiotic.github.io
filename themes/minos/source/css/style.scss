@@ -32,9 +32,6 @@ strong {
     color: #4ab1ea;
 }
 
-.section {
-    padding: 0 !important;
-}
 
 .content {
     h1, h2, h3, h4, h5, h6 {
@@ -74,47 +71,47 @@ strong {
     backdrop-filter: blur(14px);
     padding: 50px;
 }
-@media (max-width: 1209px) {
+@media screen and (max-width: 1209px) {
     .blog-header {
         font-size: calc(3.8vw + 1rem);
     }
 }
-@media (max-width: 902px) {
+@media screen and (max-width: 902px) {
     .blog-header {
         font-size: calc(3.7vw + 1rem);
     }
 }
-@media (max-width: 811px) {
+@media screen and (max-width: 811px) {
     .blog-header {
         font-size: calc(3.6vw + 1rem);
     }
 }
-@media (max-width: 771px) {
+@media screen and (max-width: 771px) {
     .blog-header {
         font-size: calc(3.5vw + 1rem);
     }
 }
-@media (max-width: 719px) {
+@media screen and (max-width: 719px) {
     .blog-header {
         font-size: calc(3.4vw + 1rem);
     }
 }
-@media (max-width: 634px) {
+@media screen and (max-width: 634px) {
     .blog-header {
         font-size: calc(3vw + 1rem);
     }
 }
-@media (max-width: 454px) {
+@media screen and (max-width: 454px) {
     .blog-header {
         font-size: calc(2.5vw + 1rem);
     }
 }
-@media (max-width: 397px) {
+@media screen and (max-width: 397px) {
     .blog-header {
         font-size: calc(1.8vw + 1rem);
     }
 }
-@media (max-width: 353px) {
+@media screen and  (max-width: 353px) {
     .blog-header {
         font-size: large;
     }
@@ -145,11 +142,15 @@ a.tag.article-tag {
     max-width: 97%;
 }
 
-@media screen and (min-width: 1024px) {
-    .container {
-        //width: 800px;
+.navbar-menu {
+    background-color: #181818;
+}
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        background-color: #181818;
     }
-
+}
+@media screen and (min-width: 1024px) {
     .navbar-dropdown {
         background-color: #181818;
         border: 1px solid #afafaf;
@@ -168,6 +169,9 @@ a.tag.article-tag {
     .navbar-logo {
         font-size: 1.5rem;
         font-weight: 600;
+    }
+
+    @media screen and (min-width: 1024px) {
         padding: 26px 45px;
     }
 
