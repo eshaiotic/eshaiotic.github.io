@@ -1,8 +1,6 @@
 const _ = require('lodash');
 const moment = require('moment');
 const cheerio = require('cheerio');
-const fs = require("hexo-fs");
-const front_matter = require("hexo-front-matter");
 const { formatRfc5646, formatIso639, getClosestRfc5646WithCountryCode, getPageLanguage } = require('../lib/i18n')(hexo);
 
 const MOMENTJS_SUPPORTED_LANGUAGES = ['af', 'ar-dz', 'ar-kw', 'ar-ly', 'ar-ma', 'ar-sa',
@@ -108,17 +106,6 @@ hexo.extend.helper.register('duration', injectMomentLocale(function () {
     return moment.duration.apply(null, arguments);
 }));
 
-hexo.extend.helper.register('include_page', function (name) {
-    let raw_content = fs.readFileSync(`./source/${name}/index.md`);
-    let content = front_matter.parse(raw_content)
-    let rendered = hexo.render.renderSync({ text: content._content, engine: "md" });
-    return {
-        index: false,
-        post: {...content, content: rendered},
-    }
-});
-
-
 /**
  * Get the word count of a paragraph.
  */
@@ -196,12 +183,4 @@ hexo.extend.filter.register('after_post_render', function (data) {
     data.content = data.content ? patchCodeHighlight(data.content) : data.content;
     data.excerpt = data.excerpt ? patchCodeHighlight(data.excerpt) : data.excerpt;
     return data;
-});
-
-hexo.extend.generator.register("posts", function(locals) {
-    return {
-        path: "posts/index.html",
-        data: locals,
-        layout: ["list", "index"]
-    };
 });

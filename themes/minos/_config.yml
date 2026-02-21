@@ -23,8 +23,10 @@ article:
 
 # Navigation bar menu links.
 menu:
-#  About: /
+  Posts: /posts
+  About: /about
   Introduction: /categories/introduction
+  Languages: /categories/languages
   Archives: /archives
 
 # Search plugin settings.
@@ -32,7 +34,7 @@ search:
   type: insight
 
 # Navigation bar toc settings
-toc: false
+toc: true
 
 # Share plugin settings.
 share:
@@ -64,4 +66,4 @@ navbar_links:
 
 # Links at the bottom of the page.
 footer_links:
-  GitHub: https://github.com/ppoffice/hexo-theme-minos
+#  GitHub: https://github.com/ppoffice/hexo-theme-minos

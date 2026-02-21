@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "debug": "node --inspect=4300 ~/node_modules/hexo-cli/bin/hexo server"
   },
   "hexo": {
     "version": "8.1.1"
@@ -15,6 +16,8 @@
     "cheerio": "^1.2.0",
     "hexo": "^8.1.1",
     "hexo-deployer-git": "^4.0.0",
+    "hexo-front-matter": "^5.0.0",
+    "hexo-fs": "^5.0.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
@@ -24,7 +27,8 @@
     "hexo-renderer-sass": "^0.5.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^1.0.0",
-    "lodash": "^4.17.23"
+    "hexo-theme-landscape": "^1.1.0",
+    "lodash": "^4.17.23",
+    "sass-migrator": "^2.5.7"
   }
 }

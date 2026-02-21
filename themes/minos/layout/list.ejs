@@ -1,0 +1,10 @@
+<section class="section">
+    <div class="container">
+    <% page.posts.sort('date', -1).each(function(post){ %>
+        <%- partial('common/article', { post, index: true }) %>
+    <% }); %>
+    <% if (page.total > 1) { %>
+        <%- partial('common/paginator') %>
+    <% } %>
+    </div>
+</section>

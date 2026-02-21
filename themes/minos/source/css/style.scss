@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:meta";
 $family-serif: "Arimo", serif;
 $family-mono: "Source Code Pro", monospace, "Microsoft YaHei";
 $border-color: #555;
@@ -6,6 +8,7 @@ $border-color: #555;
 html {
     margin: 0 !important;
     padding: 0 !important;
+    background: #181818 !important;
 }
 
 body, button, input, select, textarea {
@@ -29,6 +32,10 @@ strong {
     color: #4ab1ea;
 }
 
+.section {
+    padding: 0 !important;
+}
+
 .content {
     h1, h2, h3, h4, h5, h6 {
         font-family: $family-serif;
@@ -40,6 +47,78 @@ strong {
     }
 }
 
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    img {
+        position: relative;
+        top: 0;
+        height: 750px;
+        object-fit: cover;
+        filter: brightness(40%);
+    }
+}
+.blog-header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    font-size: calc(4vw + 1rem);
+    left: 10%;
+    flex-direction: column;
+    align-items: center;
+    right: 10%;
+    backdrop-filter: blur(14px);
+    padding: 50px;
+}
+@media (max-width: 1209px) {
+    .blog-header {
+        font-size: calc(3.8vw + 1rem);
+    }
+}
+@media (max-width: 902px) {
+    .blog-header {
+        font-size: calc(3.7vw + 1rem);
+    }
+}
+@media (max-width: 811px) {
+    .blog-header {
+        font-size: calc(3.6vw + 1rem);
+    }
+}
+@media (max-width: 771px) {
+    .blog-header {
+        font-size: calc(3.5vw + 1rem);
+    }
+}
+@media (max-width: 719px) {
+    .blog-header {
+        font-size: calc(3.4vw + 1rem);
+    }
+}
+@media (max-width: 634px) {
+    .blog-header {
+        font-size: calc(3vw + 1rem);
+    }
+}
+@media (max-width: 454px) {
+    .blog-header {
+        font-size: calc(2.5vw + 1rem);
+    }
+}
+@media (max-width: 397px) {
+    .blog-header {
+        font-size: calc(1.8vw + 1rem);
+    }
+}
+@media (max-width: 353px) {
+    .blog-header {
+        font-size: large;
+    }
+}
 .navbar.is-fixed-bottom, .navbar.is-fixed-top {
     left: inherit;
     position: inherit;
@@ -71,6 +150,11 @@ a.tag.article-tag {
         //width: 800px;
     }
 
+    .navbar-dropdown {
+        background-color: #181818;
+        border: 1px solid #afafaf;
+        border-radius: 16px;
+    }
     .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
         color: #4ab1ea;
     }
@@ -183,8 +267,8 @@ a.tag.article-tag {
         }
     }
     .article-more-link {
-        position: absolute;
-        right: 0;
+        display: flex;
+        flex-direction: column;
     }
     .article-more-link a {
         font-size: 1.2rem;
@@ -192,7 +276,7 @@ a.tag.article-tag {
         border-bottom: 1px dotted transparent;
         text-align: right;
         &:hover {
-            border-bottom-color: #44ddff;
+            color: #6ce4ff;
         }
     }
 
@@ -250,7 +334,7 @@ a.tag.article-tag {
             display: none;
             content: "\f35d";
             font-size: .8rem;
-            font-family: "Font Awesome 5 Solid";
+            font-family: "Font Awesome 5 Solid", serif;
         }
 
         .fa-external-link-alt {
@@ -295,7 +379,7 @@ a.tag.article-tag {
 
             &.info {
                 border-color: hsl(204, 86%, 53%);
-                background-color: lighten(hsl(204, 86%, 53%), 40%);
+                background-color: color.adjust(hsl(204, 86%, 53%), $lightness: 40%);
 
                 &:before {
                     background-color: hsl(204, 86%, 53%);
@@ -305,7 +389,7 @@ a.tag.article-tag {
 
             &.success {
                 border-color: hsl(141, 71%, 48%);
-                background-color: lighten(hsl(141, 71%, 48%), 40%);
+                background-color: color.adjust(hsl(141, 71%, 48%), $lightness: 40%);
 
                 &:before {
                     background-color: hsl(141, 71%, 48%);
@@ -315,7 +399,7 @@ a.tag.article-tag {
 
             &.warning {
                 border-color: hsl(48, 100%, 67%);
-                background-color: lighten(hsl(48, 100%, 67%), 24%);
+                background-color: color.adjust(hsl(48, 100%, 67%), $lightness: 24%);
 
                 &:before {
                     background-color: hsl(48, 100%, 67%);
@@ -325,7 +409,7 @@ a.tag.article-tag {
 
             &.danger {
                 border-color: hsl(348, 100%, 61%);
-                background-color: lighten(hsl(348, 100%, 61%), 24%);
+                background-color: color.adjust(hsl(348, 100%, 61%), $lightness: 24%);
 
                 &:before {
                     background-color: hsl(348, 100%, 61%);
@@ -696,6 +780,10 @@ figure.highlight {
     line-height: 0;
     max-width: 100%;
 
+    img {
+        margin: 0 auto;
+    }
+
     &:hover {
         .caption {
             display: initial;
@@ -726,12 +814,12 @@ figure.highlight {
     padding-top: 56.25%;
     position: relative;
     iframe {
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         position: absolute;
     }
 }
 
-@import "insight";
+@include meta.load-css("insight");
