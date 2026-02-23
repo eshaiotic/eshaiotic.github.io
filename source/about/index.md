@@ -2,6 +2,7 @@
 title: About this blog
 date: 2026-02-19 21:57:04
 author: Michał Ligus
+lang: en
 ---
 
 

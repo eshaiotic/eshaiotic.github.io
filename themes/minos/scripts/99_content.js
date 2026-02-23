@@ -3,7 +3,7 @@ const moment = require('moment');
 const cheerio = require('cheerio');
 const fs = require("hexo-fs");
 const front_matter = require("hexo-front-matter");
-const { formatRfc5646, formatIso639, getClosestRfc5646WithCountryCode, getPageLanguage } = require('../lib/i18n')(hexo);
+const { formatRfc5646, formatIso639, getClosestRfc5646WithCountryCode, getPageLanguage, isDefaultLanguage } = require('../lib/i18n')(hexo);
 
 const MOMENTJS_SUPPORTED_LANGUAGES = ['af', 'ar-dz', 'ar-kw', 'ar-ly', 'ar-ma', 'ar-sa',
     'ar-tn', 'ar', 'az', 'be', 'bg', 'bm', 'bn', 'bo', 'br', 'bs', 'ca', 'cs', 'cv', 'cy',
@@ -109,8 +109,13 @@ hexo.extend.helper.register('duration', injectMomentLocale(function () {
 }));
 
 hexo.extend.helper.register('include_page', function (name) {
-    let raw_content = fs.readFileSync(`./source/${name}/index.md`);
-    let content = front_matter.parse(raw_content)
+    let currentLang = getPageLanguage(this.page);
+    if (isDefaultLanguage(currentLang)) {
+        currentLang = "";
+    }
+    const langPath = currentLang + "/";
+    let rawContent = fs.readFileSync(`./source/${langPath}${name}/index.md`);
+    let content = front_matter.parse(rawContent)
     let rendered = hexo.render.renderSync({ text: content._content, engine: "md" });
     return {
         index: false,
@@ -199,9 +204,16 @@ hexo.extend.filter.register('after_post_render', function (data) {
 });
 
 hexo.extend.generator.register("posts", function(locals) {
-    return {
-        path: "posts/index.html",
-        data: locals,
-        layout: ["list", "index"]
-    };
+    return [
+        {
+            path: "posts/index.html",
+            data: locals,
+            layout: ["list", "index"]
+        },
+        {
+            path: "pl/posts/index.html",
+            data: locals,
+            layout: ["list", "index"]
+        }
+    ];
 });

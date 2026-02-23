@@ -1,0 +1,11 @@
+# Website's icon url.
+language: pl
+
+# Navigation bar menu links.
+menu:
+  Posty: /pl/posts
+  O blogu: /pl/about
+  Wstęp: /pl/categories/introduction
+  Języki: /pl/categories/languages
+  Archiwum: /pl/archives
+

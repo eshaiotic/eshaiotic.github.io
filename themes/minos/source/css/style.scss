@@ -537,6 +537,14 @@ a.tag.article-tag {
         padding-top: 2rem;
         border-top: 1px solid $border-color;
     }
+    .language-selector {
+        background: #181818;
+        button {
+            background: #181818;
+            color: #fff;
+            border: 1px solid $border-color;
+        }
+    }
 }
 
 .searchbox {

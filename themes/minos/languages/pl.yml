@@ -1,0 +1,28 @@
+name: 'Polski'
+common:
+  archives: 'Archiwum'
+  category: 'Kategoria'
+  tag: 'Tag'
+  categories: 'Kategorie'
+  tags: 'Tagi'
+nav:
+  next: 'Następny'
+  prev: 'Poprzedni'
+  search: 'Szukaj'
+  toc: 'Spis treści'
+article:
+  read_more: 'Czytaj dalej ▶'
+  read: 'czytania'
+  about: 'Około'
+  words: 'słów'
+  comments: 'Komentarze'
+  contents: 'Treści'
+search:
+  hint: 'Wprowadź tekst...'
+insight:
+  hint: 'Wprowadź text...'
+  posts: 'Posty'
+  pages: 'Strony'
+  categories: 'Kategorie'
+  tags: 'Tagi'
+  untitled: '(Bez tutyłu)'

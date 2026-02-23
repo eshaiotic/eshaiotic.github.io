@@ -1,6 +1,8 @@
 <section class="section">
     <div class="container">
-    <% page.posts.sort('date', -1).each(function(post){ %>
+    <% const currentLang = page.lang || 'en';
+    const filteredPosts = page.posts.filter(post => (post.lang || 'en') === currentLang);
+    filteredPosts.sort('date',-1).each(function(post){ %>
         <%- partial('common/article', { post, index: true }) %>
     <% }); %>
     <% if (page.total > 1) { %>

@@ -333,10 +333,29 @@ hexo.extend.helper.register('page_language', function () {
  * Get page path given a certain language tag
  */
 hexo.extend.helper.register('i18n_path', function (language) {
-    const path = this.page.path;
-    const lang = getPageLanguage(this.page);
-    const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
-    return (language ? '/' + language : '') + '/' + base;
+    const rawPath = this.page.path || '';
+    const currentLang = getPageLanguage(this.page);
+
+    const segments = rawPath.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+
+    const cleaned = (currentLang ? segments.filter(s => s !== currentLang) : segments.slice());
+
+    const looksLikeDate =
+        cleaned.length >= 3 &&
+        /^\d{4}$/.test(cleaned[0]) &&
+        /^\d{2}$/.test(cleaned[1]) &&
+        /^\d{2}$/.test(cleaned[2]);
+
+    const insertAt = looksLikeDate ? 3 : 0;
+
+    const targetIsDefault = !language || isDefaultLanguage(language);
+    const out = cleaned.slice();
+
+    if (!targetIsDefault) {
+        out.splice(insertAt, 0, language);
+    }
+
+    return '/' + out.join('/');
 });
 
 /**
