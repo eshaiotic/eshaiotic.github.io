@@ -1,0 +1,36 @@
+<%
+const languages = display_languages();
+
+// Jeżeli masz tylko 1 język skonfigurowany – nie pokazuj przełącznika
+if (languages.length > 1) {
+    const current = page_language(); // może być puste dla domyślnego języka
+    const currentLang = current && languages.includes(current) ? current : languages[0];
+
+    function hrefFor(lang) {
+        return url_for(i18n_path(!is_default_language(lang) ? lang : null));
+    }
+
+    function isActive(lang) {
+        return lang === currentLang;
+    }
+
+    const labelFor = {
+        pl: '🇵🇱 PL',
+        en: '🇬🇧 EN'
+    };
+%>
+<div class="navbar-item language-switcher language-selector">
+    <div class="buttons has-addons">
+        <% languages.forEach((lang) => { %>
+            <a class="button is-small <%= isActive(lang) ? 'is-link' : '' %>"
+               href="<%= hrefFor(lang) %>"
+               hreflang="<%= lang %>"
+               lang="<%= lang %>"
+               aria-current="<%= isActive(lang) ? 'page' : 'false' %>"
+               title="Przełącz na: <%= language_name(lang) %>">
+                <span><%= labelFor[lang] || language_name(lang) %></span>
+            </a>
+        <% }) %>
+    </div>
+</div>
+<% } %>

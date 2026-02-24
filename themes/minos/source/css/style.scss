@@ -269,6 +269,11 @@ a.tag.article-tag {
             font-family: $family-serif;;
             color: #b6b3af;
         }
+        .footnotes {
+            p {
+                font-size: 1rem;
+            }
+        }
     }
     .article-more-link {
         display: flex;
@@ -529,6 +534,41 @@ a.tag.article-tag {
     }
 }
 
+.language-selector {
+    color: #fff;
+    background: #181818;
+    .dropdown-content {
+        background-color: #181818;
+    }
+    .dropdown-item {
+        color: #fff;
+    }
+    .dropdown-item:hover {
+        color: #fff;
+        background-color: #003481;
+    }
+    .buttons {
+        .button {
+            color: #fff;
+            background: #181818;
+            border: 1px solid $border-color;
+        }
+        .is-link {
+            background: #003481;
+        }
+    }
+    button {
+        background: #181818;
+        color: #fff;
+        border: 1px solid $border-color;
+    }
+    button:hover {
+        background: #fff;
+    }
+    .button.is-small {
+        border-radius: 10px;
+    }
+}
 .footer {
     font-size: .9rem;
     background: transparent;
@@ -536,14 +576,6 @@ a.tag.article-tag {
     .content {
         padding-top: 2rem;
         border-top: 1px solid $border-color;
-    }
-    .language-selector {
-        background: #181818;
-        button {
-            background: #181818;
-            color: #fff;
-            border: 1px solid $border-color;
-        }
     }
 }
 
