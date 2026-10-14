@@ -30,6 +30,6 @@
     "hexo-theme-landscape": "^1.1.0",
     "lodash": "^4.17.23",
     "markdown-it-footnote": "^4.0.0",
-    "sass-migrator": "^2.5.7"
+    "sass-migrator": "^2.6.1"
   }
 }
