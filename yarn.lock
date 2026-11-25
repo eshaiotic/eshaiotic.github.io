@@ -245,12 +245,19 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-chokidar@^4.0.0, chokidar@^4.0.3:
+chokidar@^4.0.3:
   version "4.0.3"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-4.0.3.tgz"
   integrity sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==
   dependencies:
     readdirp "^4.0.1"
+
+chokidar@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-5.0.0.tgz#949c126a9238a80792be9a0265934f098af369a5"
+  integrity sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==
+  dependencies:
+    readdirp "^5.0.0"
 
 command-exists@^1.2.9:
   version "1.2.9"
@@ -725,12 +732,12 @@ hexo-renderer-markdown-it@^6.1.0:
     markdown-it-sub "^1.0.0"
     markdown-it-sup "^1.0.0"
 
-hexo-renderer-sass@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/hexo-renderer-sass/-/hexo-renderer-sass-0.5.0.tgz"
-  integrity sha512-zNuXGOTZj/2tLFwnVuueqbzOS8yVFhdVYbei5wPPUoiompiyZjEkF+P9TCHEuFZl+foQictqxKY2ngiWiNYOBw==
+hexo-renderer-sass@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/hexo-renderer-sass/-/hexo-renderer-sass-0.6.0.tgz#a05d64042b5e110c394df86a9205f0c20a9ae612"
+  integrity sha512-bIR7xf/On6Ocgqrgbo3Bsa1Sp87CEFZhoSEJ1jMdwMxiRp5DSB+OYo+pDGGXnJX+w4VOvd5idqUaEjhLfty3xg==
   dependencies:
-    sass "^1.41.1"
+    sass "^1.45.0"
 
 hexo-renderer-stylus@^3.0.1:
   version "3.0.1"
@@ -881,10 +888,10 @@ iconv-lite@0.6.3, iconv-lite@^0.6.3:
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
 
-immutable@^5.0.2:
-  version "5.1.4"
-  resolved "https://registry.npmjs.org/immutable/-/immutable-5.1.4.tgz"
-  integrity sha512-p6u1bG3YSnINT5RQmx/yRZBpenIl30kVxkTLDyHLIMk0gict704Q9n+thfDI7lTRm9vXdDYutVzXhzcThxTnXA==
+immutable@^5.1.5:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-5.2.1.tgz#2edd38d9a90ef82a403623407be203363ec6be51"
+  integrity sha512-CgXNM1BhKqpMjFHTyqQSk09OWqzHNJ/U4BdeBgXoBdR2DdgBdOSv131cO1/YMgzopqnka3B/i949UaMLEKUxOA==
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -1353,6 +1360,11 @@ readdirp@^4.0.1:
   resolved "https://registry.npmjs.org/readdirp/-/readdirp-4.1.2.tgz"
   integrity sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==
 
+readdirp@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-5.1.1.tgz#520bca06f9d1ae1b96cc0800dbe84b983d19422c"
+  integrity sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==
+
 readdirp@~3.6.0:
   version "3.6.0"
   resolved "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz"
@@ -1394,13 +1406,13 @@ sass-migrator@^2.5.7:
   resolved "https://registry.npmjs.org/sass-migrator/-/sass-migrator-2.5.7.tgz"
   integrity sha512-BDAr+LHFb4+0NEdc4/h6Gcyz79YgecHAc1lv7Pqibyj/tT+kK5vZFEmevbZj1Or5JkAsPUsAO7Awm8xFQZNy+Q==
 
-sass@^1.41.1:
-  version "1.97.3"
-  resolved "https://registry.npmjs.org/sass/-/sass-1.97.3.tgz"
-  integrity sha512-fDz1zJpd5GycprAbu4Q2PV/RprsRtKC/0z82z0JLgdytmcq0+ujJbJ/09bPGDxCLkKY3Np5cRAOcWiVkLXJURg==
+sass@^1.45.0:
+  version "1.108.2"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.108.2.tgz#ff9c74eba53c53cf30b248fd042dda543ed909f7"
+  integrity sha512-kugK8djotnG9HQRPTOf36asKYlxg8rWWsNLYHOgWDIVOiZQqlRfKBgF4XXM6kfw146kIDMvm57B4GIkvDSyTzA==
   dependencies:
-    chokidar "^4.0.0"
-    immutable "^5.0.2"
+    chokidar "^5.0.0"
+    immutable "^5.1.5"
     source-map-js ">=0.6.2 <2.0.0"
   optionalDependencies:
     "@parcel/watcher" "^2.4.1"
